@@ -60,7 +60,14 @@ public class AgregarMateriaActivity extends AppCompatActivity {
         buttonGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                guardarMateria();
+                String materia = materiaEditText.getText().toString();
+                String fecha = fechaEditText.getText().toString();
+                String horario =horaEditText.getText().toString();
+                if (materia.equals("")||fecha.equals("")||horario.equals("")){
+                    Toast.makeText(AgregarMateriaActivity.this, "Llene los campos", Toast.LENGTH_SHORT).show();
+                }else {
+                    guardarMateria();
+                }
             }
         });
 
